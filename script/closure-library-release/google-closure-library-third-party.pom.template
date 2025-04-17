@@ -16,6 +16,22 @@
 
     <url>http://code.google.com/p/closure-library/</url>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <gpgArguments>
+                        <arg>--pinentry-mode</arg>
+                        <arg>loopback</arg>
+                    </gpgArguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <description>
         The Google Closure Library is a collection of JavaScript code
         designed for use with the Google Closure JavaScript Compiler.
@@ -117,7 +133,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.4.4</version>
+                        <version>1.6.5</version>
                         <executions>
                             <execution>
                                 <id>default-deploy</id>
