@@ -6,7 +6,7 @@ set -e
 
 POM_TEMPLATE_FILE="google-closure-library.pom.template"
 THIRD_PARTY_POM_TEMPLATE_FILE="google-closure-library-third-party.pom.template"
-GIT_CLONE_URL="https://github.com/google/closure-library.git"
+GIT_CLONE_URL="https://github.com/clojure/closure-library.git"
 
 ### Functions
 
