@@ -139,7 +139,7 @@ perl -p -e "s/RELEASE_VERSION/$release_version/go" \
 if [ "$HUDSON" = "true" ]; then
     (
         cd "$third_party_project_dir"
-        mvn -e -ntp -B --fail-at-end \
+        mvn -e -X -ntp -B --fail-at-end \
             -Psonatype-oss-release \
             -Dsource.skip=true \
             clean deploy
@@ -147,7 +147,7 @@ if [ "$HUDSON" = "true" ]; then
 
     (
         cd "$project_dir"
-        mvn -e -ntp -B --fail-at-end \
+        mvn -e -X -ntp -B --fail-at-end \
             -Psonatype-oss-release \
             -Dsource.skip=true \
             clean deploy
