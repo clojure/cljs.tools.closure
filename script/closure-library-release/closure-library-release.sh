@@ -143,7 +143,7 @@ if [ "$HUDSON" = "true" ]; then
             -Psonatype-oss-release \
             -DskipStaging=true \
             -Dsource.skip=true \
-            clean deploy
+            clean release:prepare release:perform
     )
 
     (
@@ -152,7 +152,7 @@ if [ "$HUDSON" = "true" ]; then
             -Psonatype-oss-release \
             -DskipStaging=true \
             -Dsource.skip=true \
-            clean deploy
+            clean release:prepare release:perform
     )
 
     echo "Now log in to https://oss.sonatype.org/ to release"
