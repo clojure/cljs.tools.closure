@@ -141,7 +141,6 @@ if [ "$HUDSON" = "true" ]; then
         cd "$third_party_project_dir"
         mvn -ntp -B --fail-at-end \
             -Psonatype-oss-release \
-            -DskipStaging=true \
             -Dsource.skip=true \
             clean deploy
     )
@@ -150,7 +149,6 @@ if [ "$HUDSON" = "true" ]; then
         cd "$project_dir"
         mvn -ntp -B --fail-at-end \
             -Psonatype-oss-release \
-            -DskipStaging=true \
             -Dsource.skip=true \
             clean deploy
     )
