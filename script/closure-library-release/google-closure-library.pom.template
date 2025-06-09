@@ -9,36 +9,20 @@
     <name>Google Closure Library</name>
 
     <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>9</version>
+        <groupId>org.clojure</groupId>
+        <artifactId>pom.contrib</artifactId>
+        <version>1.3.0</version>
     </parent>
 
-    <url>http://code.google.com/p/closure-library/</url>
+    <url>https://github.com/google/closure-library</url>
 
     <description>
         The Google Closure Library is a collection of JavaScript code
         designed for use with the Google Closure JavaScript Compiler.
 
         This non-official distribution was prepared by the ClojureScript
-        team at http://clojure.org/
+        team at https://clojure.org/
     </description>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <gpgArguments>
-                        <arg>--pinentry-mode</arg>
-                        <arg>loopback</arg>
-                    </gpgArguments>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
         <dependency>
@@ -51,14 +35,14 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <organization>
         <name>Google</name>
-        <url>http://www.google.com</url>
+        <url>https://www.google.com</url>
     </organization>
 
     <developers>
@@ -110,47 +94,7 @@
 
     <issueManagement>
         <system>code.google.com</system>
-        <url>http://code.google.com/p/closure-library/issues</url>
+        <url>https://github.com/google/closure-library/issues</url>
     </issueManagement>
 
-    <profiles>
-        <profile>
-            <id>sonatype-oss-release</id>
-            <!-- This profile is enabled automatically by the Sonatype
-                 oss-parent POM when invoking the Maven Release Plugin -->
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <version>2.7</version>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.5</version>
-                        <executions>
-                            <execution>
-                                <id>default-deploy</id>
-                                <phase>deploy</phase>
-                                <!-- By default, this is the phase deploy goal will bind to -->
-                                <goals>
-                                    <goal>deploy</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <!-- The Base URL of Nexus instance where we want to stage -->
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <!-- The server "id" element from settings to use authentication from -->
-                            <serverId>sonatype-nexus-staging</serverId>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
